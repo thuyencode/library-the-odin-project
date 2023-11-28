@@ -24,7 +24,8 @@
     "tailwindcss": "^3.3.5",
     "typescript": "^5.3.2",
     "vite": "^5.0.0",
-    "vite-plugin-simple-html": "^0.1.0"
+    "vite-plugin-simple-html": "^0.1.0",
+    "vite-plugin-webfont-dl": "^3.9.1"
   },
   "dependencies": {
     "iconify-icon": "^1.0.8"
