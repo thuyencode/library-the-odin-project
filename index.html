@@ -5,9 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=inter:400,500,600,700"
+      rel="stylesheet"
+    />
+    <script type="module" src="src/main.ts"></script>
     <title>Library | Thuyen Code | The Odin Project</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="flex min-h-screen flex-col bg-gray-100 text-2xl">
+    <nav
+      class="flex items-center justify-between bg-white px-10 py-3 shadow-md"
+    >
+      <p class="font-bold text-slate-800">Library</p>
+      <button
+        type="button"
+        class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-4 py-2 text-base font-semibold capitalize text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+      >
+        <iconify-icon icon="mdi:book-plus"></iconify-icon> New book
+      </button>
+    </nav>
+    <div
+      class="absolute inset-0 m-auto flex grow flex-col items-center justify-center gap-2"
+    >
+      <p class="text-slate-600">There's nothing here</p>
+      <p class="text-slate-600">Why don't you add a new book?</p>
+    </div>
+    <main class="hidden w-full grow flex-wrap content-start"></main>
+    <footer class="mt-auto">Github</footer>
   </body>
 </html>
