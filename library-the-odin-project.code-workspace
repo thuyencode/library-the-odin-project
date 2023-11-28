@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.associations": {
+      "*.css": "tailwindcss",
+      "*.scss": "tailwindcss"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "bradlc.vscode-tailwindcss",
+      "christian-kohler.npm-intellisense",
+      "formulahendry.auto-rename-tag",
+      "esbenp.prettier-vscode",
+      "christian-kohler.path-intellisense",
+      "antfu.iconify",
+      "dbaeumer.vscode-eslint",
+      "sonarsource.sonarlint-vscode"
+    ]
+  }
+}
