@@ -15,6 +15,7 @@
     <title>Library | Thuyen Code | The Odin Project</title>
   </head>
   <body class="flex min-h-screen flex-col justify-between bg-gray-100">
+    <!-- The modal -->
     <div
       id="hs-new-book-modal"
       class="hs-overlay fixed start-0 top-0 z-[60] hidden h-full w-full overflow-y-auto overflow-x-hidden [--overlay-backdrop:static]"
@@ -24,13 +25,86 @@
         class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 m-3 mt-0 flex h-[calc(100%-3.5rem)] items-center opacity-0 transition-all ease-out sm:mx-auto sm:w-full sm:max-w-lg"
       >
         <form
-          class="pointer-events-auto flex flex-col rounded-xl border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:shadow-slate-700/[.7]"
+          class="pointer-events-auto flex w-full flex-col rounded-xl border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:shadow-slate-700/[.7]"
         >
-          <div class="overflow-y-auto p-4">
-            <p class="mt-1 text-gray-800 dark:text-gray-400">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content.
-            </p>
+          <div class="space-y-4 overflow-y-auto p-4">
+            <div class="">
+              <label
+                for="book-name-input"
+                class="mb-2 block text-sm font-medium dark:text-white"
+                >Book's name</label
+              >
+              <input
+                type="text"
+                id="book-name-input"
+                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="The Communist Manifesto"
+                required
+              />
+            </div>
+            <div class="">
+              <label
+                for="author-name-input"
+                class="mb-2 block text-sm font-medium dark:text-white"
+                >Author(s)</label
+              >
+              <input
+                type="text"
+                id="author-name-input"
+                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
+                placeholder="Karl Marx, Friedrich Engels"
+                required
+              />
+            </div>
+            <div class="">
+              <label
+                for="pages-number-input"
+                class="mb-2 block text-sm font-medium dark:text-white"
+                >Page(s)</label
+              >
+              <div
+                class="rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-slate-700"
+                data-hs-input-number
+              >
+                <div class="flex w-full items-center justify-between gap-x-1">
+                  <div class="grow px-3 py-2">
+                    <input
+                      class="w-full border-0 bg-transparent p-0 text-gray-800 focus:ring-0 dark:text-white"
+                      type="text"
+                      value="1"
+                      min="1"
+                      id="pages-number-input"
+                      data-hs-input-number-input
+                      required
+                    />
+                  </div>
+                  <div
+                    class="-gap-y-px flex items-center divide-x divide-gray-200 border-s border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+                  >
+                    <button
+                      type="button"
+                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-sm font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                      data-hs-input-number-decrement
+                    >
+                      <iconify-icon
+                        class="text-base"
+                        icon="ic:round-minus"
+                      ></iconify-icon>
+                    </button>
+                    <button
+                      type="button"
+                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-sm font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                      data-hs-input-number-increment
+                    >
+                      <iconify-icon
+                        class="text-base"
+                        icon="ic:round-plus"
+                      ></iconify-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="flex items-center justify-end gap-x-2 border-t px-4 py-3 dark:border-gray-700"
@@ -53,12 +127,14 @@
       </div>
     </div>
 
+    <!-- Navbar -->
     <nav
       class="z-10 flex items-center justify-between bg-white px-10 py-3 text-2xl shadow-md"
     >
       <p class="font-semibold text-slate-800">
         You have <span id="quantity">0</span> books
       </p>
+      <!-- This button is hidden when there are no books -->
       <button
         type="button"
         class="hidden items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -68,6 +144,7 @@
       </button>
     </nav>
 
+    <!-- This div is shown when there are no books -->
     <div
       class="absolute inset-0 z-0 m-auto flex flex-col items-center justify-center gap-3 bg-white"
     >
@@ -82,8 +159,10 @@
       </button>
     </div>
 
+    <!-- Where the books are shown -->
     <main class="hidden w-full grow flex-wrap content-start"></main>
 
+    <!-- Footer -->
     <footer class="z-10 mt-auto">
       <a
         class="w-full"
