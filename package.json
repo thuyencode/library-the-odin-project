@@ -28,6 +28,8 @@
     "vite-plugin-webfont-dl": "^3.9.1"
   },
   "dependencies": {
-    "iconify-icon": "^1.0.8"
+    "@preline/overlay": "^2.0.1",
+    "iconify-icon": "^1.0.8",
+    "preline": "^2.0.2"
   }
 }
