@@ -15,11 +15,47 @@
     <title>Library | Thuyen Code | The Odin Project</title>
   </head>
   <body class="flex min-h-screen flex-col justify-between bg-gray-100 text-2xl">
+    <div
+      id="hs-new-book-modal"
+      class="modal-overlay-wrapper hs-overlay hs-overlay-open:opacity-100 hs-overlay-open:duration-500 hidden"
+    >
+      <div
+        class="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 modal-wrapper"
+      >
+        <div class="modal">
+          <div class="title-wrapper">
+            <h3 class="title">Modal title</h3>
+            <button class="close-btn" data-hs-overlay="#hs-new-book-modal">
+              <span class="sr-only">Close</span>
+              <iconify-icon icon="mdi:window-close"></iconify-icon>
+            </button>
+          </div>
+          <div class="overflow-y-auto p-4">
+            <p class="mt-1 text-gray-800 dark:text-gray-400">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content.
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-end gap-x-2 border-t px-4 py-3 dark:border-gray-700"
+          >
+            <button
+              class="outline-btn-red sm"
+              data-hs-overlay="#hs-new-book-modal"
+            >
+              Close
+            </button>
+            <button class="solid-btn sm">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav
       class="z-10 flex items-center justify-between bg-white px-10 py-3 shadow-md"
     >
       <p class="font-bold text-slate-800">Library</p>
-      <button class="solid sm">
+      <button class="solid-btn sm hidden" data-hs-overlay="#hs-new-book-modal">
         <iconify-icon icon="mdi:book-plus"></iconify-icon> New book
       </button>
     </nav>
@@ -29,20 +65,20 @@
     >
       <p class="text-3xl text-slate-800">There's nothing here</p>
       <p class="text-slate-600">Why don't you add a new book?</p>
-      <button class="ghost lg">
+      <button class="ghost-btn lg" data-hs-overlay="#hs-new-book-modal">
         <iconify-icon icon="mdi:book-plus"></iconify-icon> New book
       </button>
     </div>
 
     <main class="hidden w-full grow flex-wrap content-start"></main>
 
-    <footer class="z-10">
+    <footer class="z-10 mt-auto">
       <a
         class="w-full"
         href="https://github.com/thuyencode/library-the-odin-project"
         target="_blank"
       >
-        <button class="ghost w-full">
+        <button class="ghost-btn w-full">
           Thuyen Code
           <iconify-icon class="text-2xl" icon="mdi:github"></iconify-icon>
         </button>
