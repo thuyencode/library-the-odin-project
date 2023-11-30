@@ -11,6 +11,12 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
+      },
+      minHeight: {
+        screen: '100dvh'
+      },
+      gridTemplateColumns: {
+        ram: 'repeat(auto-fill, minmax(250px, 1fr))'
       }
     }
   },

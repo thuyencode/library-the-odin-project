@@ -6,9 +6,6 @@
   ],
   "settings": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[html]": {
-      "editor.defaultFormatter": "mohd-akram.vscode-html-format"
-    },
     "editor.formatOnSave": true,
     "files.associations": {
       "*.css": "tailwindcss",
@@ -24,8 +21,7 @@
       "christian-kohler.path-intellisense",
       "antfu.iconify",
       "dbaeumer.vscode-eslint",
-      "sonarsource.sonarlint-vscode",
-      "mohd-akram.vscode-html-format"
+      "sonarsource.sonarlint-vscode"
     ]
   }
 }

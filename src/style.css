@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card {
+    @apply flex max-h-52 min-w-[250px] flex-col rounded-xl border bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-slate-900 dark:shadow-slate-700/[.7] md:p-5;
+  }
+  .card .card-title {
+    @apply line-clamp-2 text-base font-bold text-gray-800 dark:text-white md:text-lg;
+  }
+  .card .card-subtitle {
+    @apply mt-1 line-clamp-1 text-xs font-medium uppercase text-gray-500 dark:text-gray-500;
+  }
+  .card .card-content {
+    @apply mt-2 line-clamp-3 text-gray-500 dark:text-gray-400;
+  }
+  .card .card-foot {
+    @apply mt-auto inline-flex items-center justify-between gap-x-1 text-sm font-semibold;
+  }
+}
