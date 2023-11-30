@@ -24,7 +24,7 @@ newBookForm!.addEventListener('submit', (event: SubmitEvent) => {
   addBookToLibrary(book)
   closeModal('#hs-new-book-modal')
 
-  target.reset()
+  // target.reset()
 })
 
 updateUI()

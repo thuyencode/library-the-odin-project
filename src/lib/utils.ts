@@ -1,5 +1,5 @@
 import HSOverlay from '@preline/overlay'
-import { Book } from './objects'
+import { Book, BookProps } from './objects'
 import {
   bookContainer,
   booksQuantityEle,
@@ -120,11 +120,12 @@ function uiWhenThereBooks() {
  */
 function getBooksFromLocalStorage() {
   const books = new Array<Book>()
-  const items = localStorage.getItem(LS_ID)
+  const items = JSON.parse(localStorage.getItem(LS_ID) as string)
 
-  if (items !== null && items.length !== 0) {
-    JSON.parse(items).forEach((item: Book) => {
-      books.push(new Book(item))
+  if (items !== null && items.length > 0) {
+    items.forEach((item: BookProps) => {
+      const book = new Book(item)
+      books.push(book)
     })
   }
 

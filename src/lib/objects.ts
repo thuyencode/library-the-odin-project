@@ -1,6 +1,6 @@
 import { removeBookFromLibrary } from './utils'
 
-type BookProps = {
+export type BookProps = {
   id?: string
   title: string
   authors: string

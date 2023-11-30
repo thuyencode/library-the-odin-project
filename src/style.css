@@ -16,6 +16,6 @@
     @apply mt-2 line-clamp-3 text-gray-500 dark:text-gray-400;
   }
   .card .card-foot {
-    @apply mt-auto inline-flex items-center justify-between gap-x-1 text-sm font-semibold;
+    @apply mt-auto inline-flex items-center justify-between gap-x-1 pt-2 text-sm font-semibold;
   }
 }
