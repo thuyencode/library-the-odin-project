@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "deploy": "gh-pages --dist 'dist' --branch 'gh-pages'"
   },
   "devDependencies": {
     "@preline/input-number": "^2.0.1",
