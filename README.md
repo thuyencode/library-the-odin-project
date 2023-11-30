@@ -2,7 +2,7 @@
 
 [More detail information here](https://www.theodinproject.com/lessons/node-path-javascript-library).
 
-![Admin Dashboard on desktop on mobile devices be like](https://i.ibb.co/8mFpZCT/Screenshot-20231128-113145-1.png)
+![The website looks like this](https://i.ibb.co/wCJj68H/Screenshot-2023-11-30-at-15-06-36-Library-Thuyen-Code-The-Odin-Project.png)
 
 ## Getting started
 
