@@ -122,8 +122,8 @@ function getBooksFromLocalStorage() {
   const books = new Array<Book>()
   const items = localStorage.getItem(LS_ID)
 
-  if (items !== null || items!.length !== 0) {
-    JSON.parse(items!).forEach((item: Book) => {
+  if (items !== null && items.length !== 0) {
+    JSON.parse(items).forEach((item: Book) => {
       books.push(new Book(item))
     })
   }
