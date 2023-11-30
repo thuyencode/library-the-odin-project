@@ -1,5 +1,4 @@
 import HSOverlay from '@preline/overlay'
-import { Book, BookProps } from './objects'
 import {
   bookContainer,
   booksQuantityEle,
@@ -7,10 +6,11 @@ import {
   noBookEle,
   welcomeNavbar
 } from './elements'
+import { Book, BookProps } from './objects'
 
 const LS_ID = 'BOOKS'
 
-let books = getBooksFromLocalStorage()
+let books = new Array<Book>()
 
 /**
  * Adds a book to the library.
@@ -18,19 +18,20 @@ let books = getBooksFromLocalStorage()
  * @param {Book} book - The book to be added.
  */
 export function addBookToLibrary(book: Book) {
-  books = [...books, book]
-
-  bookContainer!.appendChild(book.getElement)
+  books = [book, ...books]
 
   updateUI()
   saveBooksFromLocalStorage()
 }
 
+/**
+ * Removes an item from the `books` array.
+ *
+ * @param {string} id - The ID of the book to be removed.
+ * @return {void} This function does not return a value.
+ */
 export function removeBookFromLibrary(id: string) {
   books = books.filter((book) => book.id !== id)
-
-  bookContainer!.innerHTML = ''
-  books.forEach((book) => bookContainer!.appendChild(book.getElement))
 
   updateUI()
   saveBooksFromLocalStorage()
@@ -89,6 +90,8 @@ function uiWhenThereNoBooks() {
     infoNavbar!.classList.remove('flex')
     infoNavbar!.classList.add('hidden')
   }
+
+  bookContainer!.innerHTML = ''
 }
 
 function uiWhenThereBooks() {
@@ -111,6 +114,9 @@ function uiWhenThereBooks() {
     infoNavbar!.classList.remove('hidden')
     infoNavbar!.classList.add('flex')
   }
+
+  bookContainer!.innerHTML = ''
+  books.forEach((book) => bookContainer!.appendChild(book.getElement))
 }
 
 /**
@@ -118,18 +124,14 @@ function uiWhenThereBooks() {
  *
  * @return {Array<Book>} The list of books retrieved from local storage.
  */
-function getBooksFromLocalStorage() {
-  const books = new Array<Book>()
+export function setBooksFromLocalStorage() {
   const items = JSON.parse(localStorage.getItem(LS_ID) as string)
 
   if (items !== null && items.length > 0) {
     items.forEach((item: BookProps) => {
-      const book = new Book(item)
-      books.push(book)
+      books.push(new Book(item))
     })
   }
-
-  return books
 }
 
 /**

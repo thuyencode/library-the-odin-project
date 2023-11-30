@@ -1,7 +1,12 @@
 import 'iconify-icon'
 import { newBookForm } from './lib/elements'
 import { Book } from './lib/objects'
-import { addBookToLibrary, closeModal, updateUI } from './lib/utils'
+import {
+  addBookToLibrary,
+  closeModal,
+  setBooksFromLocalStorage,
+  updateUI
+} from './lib/utils'
 
 newBookForm!.addEventListener('submit', (event: SubmitEvent) => {
   event.preventDefault()
@@ -24,7 +29,8 @@ newBookForm!.addEventListener('submit', (event: SubmitEvent) => {
   addBookToLibrary(book)
   closeModal('#hs-new-book-modal')
 
-  // target.reset()
+  target.reset()
 })
 
+setBooksFromLocalStorage()
 updateUI()

@@ -19,7 +19,7 @@
     <title>Library | Thuyen Code | The Odin Project</title>
   </head>
   <body
-    class="flex min-h-screen flex-col justify-between overflow-y-auto will-change-scroll"
+    class="flex min-h-screen flex-col justify-between overflow-y-auto bg-white will-change-scroll dark:bg-slate-800"
   >
     <!-- The modal -->
     <div
@@ -37,7 +37,7 @@
             <div>
               <label
                 for="book-title-input"
-                class="mb-2 block text-sm font-medium dark:text-white"
+                class="mb-2 block text-xs font-medium dark:text-white sm:text-sm"
               >
                 Book's title</label
               >
@@ -45,7 +45,7 @@
                 type="text"
                 id="book-title-input"
                 name="book-title-input"
-                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
+                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-xs focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 sm:text-sm"
                 placeholder="The Communist Manifesto"
                 required
               />
@@ -53,14 +53,14 @@
             <div>
               <label
                 for="author-name-input"
-                class="mb-2 block text-sm font-medium dark:text-white"
+                class="mb-2 block text-xs font-medium dark:text-white sm:text-sm"
                 >Author(s)</label
               >
               <input
                 type="text"
                 id="author-name-input"
                 name="author-name-input"
-                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
+                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-xs focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 sm:text-sm"
                 placeholder="Karl Marx, Friedrich Engels"
                 required
               />
@@ -68,7 +68,7 @@
             <div>
               <label
                 for="description-input"
-                class="mb-2 block text-sm font-medium dark:text-white"
+                class="mb-2 block text-xs font-medium dark:text-white sm:text-sm"
                 >Description</label
               >
               <input
@@ -76,14 +76,14 @@
                 minlength="6"
                 id="description-input"
                 name="description-input"
-                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600"
+                class="block w-full rounded-lg border-gray-200 px-4 py-3 text-xs focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 sm:text-sm"
                 placeholder="Proletariat together strong"
               />
             </div>
             <div>
               <label
                 for="pages-number-input"
-                class="mb-2 block text-sm font-medium dark:text-white"
+                class="mb-2 block text-xs font-medium dark:text-white sm:text-sm"
                 >Page(s)</label
               >
               <div
@@ -109,7 +109,7 @@
                   >
                     <button
                       type="button"
-                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-sm font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-xs font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
                       data-hs-input-number-decrement
                     >
                       <iconify-icon
@@ -119,7 +119,7 @@
                     </button>
                     <button
                       type="button"
-                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-sm font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                      class="inline-flex h-10 w-10 items-center justify-center gap-x-2 bg-white text-xs font-medium text-gray-800 last:rounded-e-lg hover:bg-gray-50 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
                       data-hs-input-number-increment
                     >
                       <iconify-icon
@@ -137,14 +137,14 @@
           >
             <button
               type="button"
-              class="inline-flex items-center gap-x-2 rounded-lg border border-red-500 px-3 py-2 text-sm font-semibold text-red-500 hover:border-red-400 hover:text-red-400 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              class="inline-flex items-center gap-x-2 rounded-lg border border-red-500 px-3 py-2 text-xs font-semibold text-red-500 hover:border-red-400 hover:text-red-400 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
               data-hs-overlay="#hs-new-book-modal"
             >
               Close
             </button>
             <button
               type="submit"
-              class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
             >
               Save Book
             </button>
@@ -155,28 +155,28 @@
 
     <!-- This navbar is shown when there are no books -->
     <nav
-      class="sticky top-0 z-10 flex items-center justify-center bg-white px-10 py-3 text-center text-xl shadow-md md:text-2xl"
+      class="sticky top-0 z-10 flex items-center justify-center bg-white p-3 text-center text-lg shadow-md dark:bg-slate-900 sm:text-xl md:px-10 md:text-2xl"
       id="welcome-navbar"
       aria-label="Welcome navbar"
     >
-      <p class="my-1 font-semibold text-slate-800">
+      <p class="my-1 font-semibold text-slate-800 dark:text-white">
         Welcome back to your library
       </p>
     </nav>
 
     <!-- This navbar is hidden when there are no books -->
     <nav
-      class="sticky top-0 z-10 flex items-center justify-between bg-white px-10 py-3 text-xl shadow-md md:text-2xl"
+      class="sticky top-0 z-10 flex items-center justify-between bg-white p-3 text-lg shadow-md dark:bg-slate-900 sm:text-xl md:px-10 md:text-2xl"
       id="information-navbar"
       aria-label="Information navbar"
     >
-      <p class="font-semibold text-slate-800">
+      <p class="font-semibold text-slate-800 dark:text-white">
         You have <span id="quantity">0</span> books
       </p>
       <!-- This button is hidden when there are no books -->
       <button
         type="button"
-        class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        class="inline-flex items-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
         data-hs-overlay="#hs-new-book-modal"
       >
         <iconify-icon icon="mdi:book-plus"></iconify-icon> New Book
@@ -185,11 +185,15 @@
 
     <!-- This div is shown when there are no books -->
     <div
-      class="absolute inset-0 m-auto hidden flex-col items-center justify-center gap-3 bg-white text-center"
+      class="absolute inset-0 m-auto hidden flex-col items-center justify-center gap-3 text-center"
       id="no-books"
     >
-      <p class="text-2xl text-slate-800 md:text-3xl">There's nothing here</p>
-      <p class="text-xl text-slate-600 md:text-2xl">
+      <p class="text-2xl text-slate-800 dark:text-white md:text-3xl">
+        There's nothing here
+      </p>
+      <p
+        class="text-lg text-slate-600 dark:text-gray-400 sm:text-xl md:text-2xl"
+      >
         Why don't you add a new book?
       </p>
       <button
@@ -213,7 +217,7 @@
       >
         <button
           type="button"
-          class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent px-4 py-3 text-sm font-semibold text-gray-500 hover:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+          class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent px-4 py-3 text-xs font-semibold text-gray-500 hover:bg-gray-100 disabled:pointer-events-none disabled:opacity-50 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 sm:text-sm"
         >
           Thuyen Code
           <iconify-icon class="text-2xl" icon="mdi:github"></iconify-icon>
