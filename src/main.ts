@@ -8,7 +8,7 @@ import {
   updateUI
 } from './lib/utils'
 
-newBookForm!.addEventListener('submit', (event: SubmitEvent) => {
+newBookForm?.addEventListener('submit', (event: SubmitEvent) => {
   event.preventDefault()
 
   const target = event.target as HTMLFormElement

@@ -1,6 +1,6 @@
 import { removeBookFromLibrary } from './utils'
 
-export type BookProps = {
+export interface BookProps {
   id?: string
   title: string
   authors: string
@@ -37,7 +37,7 @@ export class Book {
    *
    * @return {HTMLDivElement} The generated card element.
    */
-  get getElement() {
+  get getElement(): HTMLDivElement {
     const cardElement = document.createElement('div')
     cardElement.id = this.id
     cardElement.classList.add('card')
@@ -89,9 +89,9 @@ export class Book {
       'dark:focus:ring-gray-600'
     )
 
-    buttonElement.addEventListener('click', () =>
+    buttonElement.addEventListener('click', () => {
       removeBookFromLibrary(this.id)
-    )
+    })
 
     const iconElement = document.createElement('iconify-icon')
     iconElement.setAttribute('icon', 'mdi:delete')

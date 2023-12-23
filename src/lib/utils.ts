@@ -1,4 +1,6 @@
-import HSOverlay from '@preline/overlay'
+/* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import { HSOverlay } from 'preline'
 import {
   bookContainer,
   booksQuantityEle,
@@ -6,7 +8,7 @@ import {
   noBookEle,
   welcomeNavbar
 } from './elements'
-import { Book, BookProps } from './objects'
+import { Book, type BookProps } from './objects'
 
 const LS_ID = 'BOOKS'
 
@@ -17,7 +19,7 @@ let books = new Array<Book>()
  *
  * @param {Book} book - The book to be added.
  */
-export function addBookToLibrary(book: Book) {
+export function addBookToLibrary(book: Book): void {
   books = [book, ...books]
 
   updateUI()
@@ -30,7 +32,7 @@ export function addBookToLibrary(book: Book) {
  * @param {string} id - The ID of the book to be removed.
  * @return {void} This function does not return a value.
  */
-export function removeBookFromLibrary(id: string) {
+export function removeBookFromLibrary(id: string): void {
   books = books.filter((book) => book.id !== id)
 
   updateUI()
@@ -43,7 +45,7 @@ export function removeBookFromLibrary(id: string) {
  * @param {string} selector - The CSS selector of the modal element to close.
  * @throws {Error} Don't call this function if the modal is not shown.
  */
-export function closeModal(selector: string) {
+export function closeModal(selector: string): void {
   const modalEle = document.querySelector<HTMLElement>(selector)
 
   if (modalEle === null || modalEle.classList.contains('hidden')) {
@@ -60,63 +62,70 @@ export function closeModal(selector: string) {
  *
  * @return {void} Does not return a value
  */
-export function updateUI() {
+export function updateUI(): void {
   if (books.length === 0) {
     uiWhenThereNoBooks()
   } else {
     uiWhenThereBooks()
   }
 
-  booksQuantityEle!.textContent = books.length.toString()
+  if (booksQuantityEle) {
+    booksQuantityEle.textContent = books.length.toString()
+  }
 }
 
-function uiWhenThereNoBooks() {
-  if (noBookEle!.classList.contains('hidden')) {
-    noBookEle!.classList.remove('hidden')
-    noBookEle!.classList.add('flex')
+function uiWhenThereNoBooks(): void {
+  if (noBookEle?.classList.contains('hidden')) {
+    noBookEle.classList.remove('hidden')
+    noBookEle.classList.add('flex')
   }
 
-  if (bookContainer!.classList.contains('flex')) {
-    bookContainer!.classList.remove('flex')
-    bookContainer!.classList.add('hidden')
+  if (bookContainer?.classList.contains('flex')) {
+    bookContainer?.classList.remove('flex')
+    bookContainer?.classList.add('hidden')
   }
 
-  if (welcomeNavbar!.classList.contains('hidden')) {
-    welcomeNavbar!.classList.remove('hidden')
-    welcomeNavbar!.classList.add('flex')
+  if (welcomeNavbar?.classList.contains('hidden')) {
+    welcomeNavbar?.classList.remove('hidden')
+    welcomeNavbar?.classList.add('flex')
   }
 
-  if (infoNavbar!.classList.contains('flex')) {
-    infoNavbar!.classList.remove('flex')
-    infoNavbar!.classList.add('hidden')
+  if (infoNavbar?.classList.contains('flex')) {
+    infoNavbar?.classList.remove('flex')
+    infoNavbar?.classList.add('hidden')
   }
 
-  bookContainer!.innerHTML = ''
+  if (bookContainer) {
+    bookContainer.innerHTML = ''
+  }
 }
 
-function uiWhenThereBooks() {
-  if (noBookEle!.classList.contains('flex')) {
-    noBookEle!.classList.remove('flex')
-    noBookEle!.classList.add('hidden')
+function uiWhenThereBooks(): void {
+  if (noBookEle?.classList.contains('flex')) {
+    noBookEle?.classList.remove('flex')
+    noBookEle?.classList.add('hidden')
   }
 
-  if (bookContainer!.classList.contains('hidden')) {
-    bookContainer!.classList.remove('hidden')
-    bookContainer!.classList.add('flex')
+  if (bookContainer?.classList.contains('hidden')) {
+    bookContainer?.classList.remove('hidden')
+    bookContainer?.classList.add('flex')
   }
 
-  if (welcomeNavbar!.classList.contains('flex')) {
-    welcomeNavbar!.classList.remove('flex')
-    welcomeNavbar!.classList.add('hidden')
+  if (welcomeNavbar?.classList.contains('flex')) {
+    welcomeNavbar?.classList.remove('flex')
+    welcomeNavbar?.classList.add('hidden')
   }
 
-  if (infoNavbar!.classList.contains('hidden')) {
-    infoNavbar!.classList.remove('hidden')
-    infoNavbar!.classList.add('flex')
+  if (infoNavbar?.classList.contains('hidden')) {
+    infoNavbar?.classList.remove('hidden')
+    infoNavbar?.classList.add('flex')
   }
 
-  bookContainer!.innerHTML = ''
-  books.forEach((book) => bookContainer!.appendChild(book.getElement))
+  if (bookContainer) {
+    bookContainer.innerHTML = ''
+  }
+
+  books.forEach((book) => bookContainer?.appendChild(book.getElement))
 }
 
 /**
@@ -124,7 +133,7 @@ function uiWhenThereBooks() {
  *
  * @return {Array<Book>} The list of books retrieved from local storage.
  */
-export function setBooksFromLocalStorage() {
+export function setBooksFromLocalStorage(): void {
   const items = JSON.parse(localStorage.getItem(LS_ID) as string)
 
   if (items !== null && items.length > 0) {
@@ -139,6 +148,6 @@ export function setBooksFromLocalStorage() {
  *
  * @return {void} Does not return a value.
  */
-function saveBooksFromLocalStorage() {
+function saveBooksFromLocalStorage(): void {
   localStorage.setItem(LS_ID, JSON.stringify(books))
 }
